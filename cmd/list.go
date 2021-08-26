@@ -16,72 +16,38 @@ limitations under the License.
 package cmd
 
 import (
-	"encoding/csv"
 	"fmt"
 	"log"
-	"math/rand"
-	"os"
-	"time"
 
 	"github.com/spf13/cobra"
 )
 
-// var questionsMap = make(map[int]string)
-
-// askCmd represents the ask command
-var askCmd = &cobra.Command{
-	Use:   "ask",
-	Short: "Random an interview question",
-	Long:  `This command print a Random an interview question`,
+// listCmd represents the list command
+var listCmd = &cobra.Command{
+	Use:   "list",
+	Short: "List all interview questions",
+	Long:  `List all interview questions`,
 	Run: func(cmd *cobra.Command, args []string) {
 		questionsMap, err := Load()
 		if err != nil {
 			log.Fatal(err)
 		}
-		rand.Seed(time.Now().UnixNano())
-		num := rand.Intn(len(questionsMap)) + 1
-
-		fmt.Println(questionsMap[num])
+		for i := 1; i <= len(questionsMap); i++ {
+			fmt.Println(i, questionsMap[i])
+		}
 	},
 }
 
-func Load() (map[int]string, error) {
-	file, err := os.Open("./csv/questions.csv")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	reader := csv.NewReader(file)
-
-	csvData, err := reader.ReadAll()
-
-	if err != nil {
-		log.Fatal(err)
-		os.Exit(1)
-	}
-
-	result := make(map[int]string)
-	for num, line := range csvData {
-		if num == 0 {
-			continue
-		}
-		result[num] = line[1]
-	}
-	return result, nil
-}
-
 func init() {
-	rootCmd.AddCommand(askCmd)
+	rootCmd.AddCommand(listCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// askCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// listCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// askCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// listCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
