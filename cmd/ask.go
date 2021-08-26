@@ -45,6 +45,7 @@ var askCmd = &cobra.Command{
 	},
 }
 
+//Load csv file with default interview questions
 func Load() (map[int]string, error) {
 	file, err := os.Open("./csv/questions.csv")
 
