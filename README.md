@@ -20,6 +20,8 @@ This command-line mainly generates a random interview question for practising.
 
 ## How to run
 
+## Tech stack
+
 
 
 
