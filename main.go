@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/borischen0203/interview-cli/cmd"
+import "github.com/borischen0203/interview/cmd"
 
 func main() {
 	cmd.Execute()

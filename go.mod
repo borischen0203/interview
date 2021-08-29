@@ -1,4 +1,4 @@
-module github.com/borischen0203/interview-cli
+module github.com/borischen0203/interview
 
 go 1.16
 
