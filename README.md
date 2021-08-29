@@ -1,4 +1,4 @@
-# interview-cli
+# interview
 This command-line mainly generates a random interview question for practising.
 
 

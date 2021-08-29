@@ -1,4 +1,4 @@
-APP?=interview-cli
+APP?=interview
 
 default:
 	echo ${APP}
