@@ -20,6 +20,11 @@ This command-line mainly generates a random interview question for practising.
 
 ## How to run
 
+brew tap borischen0203/interview
+
+brew install interview
+
+
 ## Tech stack
 
 
