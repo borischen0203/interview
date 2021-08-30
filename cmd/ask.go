@@ -26,8 +26,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// var questionsMap = make(map[int]string)
-
 // askCmd represents the ask command
 var askCmd = &cobra.Command{
 	Use:   "ask",
@@ -47,7 +45,7 @@ var askCmd = &cobra.Command{
 
 //Load csv file with default interview questions
 func Load() (map[int]string, error) {
-	file, err := os.Open("default.csv")
+	file, err := os.Open("./csv/default.csv")
 
 	if err != nil {
 		fmt.Println("An error encountered ::", err)
