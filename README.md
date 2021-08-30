@@ -6,19 +6,22 @@ This `interview` command-line mainly generates a random interview question for p
 - `ask` command: Generate a random interview question.
 - `list` command: List all interview questions.
 
-
-
-
-## Installation
+<!-- ## Installation
 
 ### On macOS (or Linux) via Homebrew
 ```bash
 > brew tap borischen0203/interview
 > brew install interview
-```
+``` -->
 
 ## How to use
 
+### Before
+```bash
+> make build # build execute file
+```
+
+### Run
 ```bash
 > interview ask # quickly generate a random interview question
 
